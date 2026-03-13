@@ -1,50 +1,50 @@
-"""Parqueadero: control de vehículos
-Registrar 8 vehículos en un parqueadero.
-Por cada uno pedir:
- placa
- tipo: carro o moto
- horas parqueado
-Tarifas:
- carro: 4000 por hora
- moto: 2000 por hora
-Al final mostrar:
- total recaudado
- cuántos carros ingresaron
- cuántas motos ingresaron
- cuál vehículo pagó más
-Practica: ciclos, máximos, acumuladores."""
-# Inicializamos los contadores y acumuladores necesarios para el registro de vehículos.
-total_recaudado = 0
-contador_carros = 0
-contador_motos = 0
-max_pago = 0
-vehiculo_mayor_pago = ""
-# Usamos un bucle para registrar 8 vehículos.
+"""Parking: vehicle control
+Register 8 vehicles in a parking lot.
+For each one ask:
+ plate
+ type: car or motorcycle
+ hours parked
+Rates:
+ car: 4000 per hour
+ motorcycle: 2000 per hour
+At the end show:
+ total collected
+ how many cars entered
+ how many motorcycles entered
+ which vehicle paid more
+Practice: loops, maximums, accumulators."""
+# Initialize the necessary counters and accumulators for vehicle registration.
+total_collected = 0
+cars_counter = 0
+motorcycles_counter = 0
+max_payment = 0
+vehicle_highest_payment = ""
+# Use a loop to register 8 vehicles.
 for i in range(8):
-    # Solicitamos la placa del vehículo.
-    placa = input('Ingrese la placa del vehículo: ')
-    # Solicitamos el tipo de vehículo (carro o moto).
-    tipo = input('Ingrese el tipo de vehículo (carro o moto): ')
-    # Solicitamos las horas que el vehículo estuvo parqueado.
-    horas_parqueado = int(input('Ingrese las horas parqueado: '))
-    # Calculamos el pago según el tipo de vehículo y actualizamos los contadores y acumuladores.
-    if tipo.lower() == 'carro':
-        pago = 4000 * horas_parqueado
-        contador_carros += 1
-    elif tipo.lower() == 'moto':
-        pago = 2000 * horas_parqueado
-        contador_motos += 1
+    # Ask for the vehicle's plate.
+    plate = input('Enter the vehicle\'s plate: ')
+    # Ask for the vehicle type (car or motorcycle).
+    type = input('Enter the vehicle type (car or motorcycle): ')
+    # Ask for the hours the vehicle was parked.
+    parked_hours = int(input('Enter the parked hours: '))
+    # Calculate the payment according to the vehicle type and update the counters and accumulators.
+    if type.lower() == 'car':
+        payment = 4000 * parked_hours
+        cars_counter += 1
+    elif type.lower() == 'motorcycle':
+        payment = 2000 * parked_hours
+        motorcycles_counter += 1
     else:
-        print('Tipo de vehículo no válido. Intente nuevamente.')
+        print('Invalid vehicle type. Try again.')
         continue
-    # Acumulamos el total recaudado con el pago del vehículo actual.
-    total_recaudado += pago
-    # Verificamos si este vehículo pagó más que el máximo registrado hasta ahora.
-    if pago > max_pago:
-        max_pago = pago
-        vehiculo_mayor_pago = placa
-# Al finalizar el registro de los vehículos, mostramos los resultados.
-print(f"Total recaudado: {total_recaudado} pesos.")
-print(f"Cantidad de carros ingresados: {contador_carros}")
-print(f"Cantidad de motos ingresadas: {contador_motos}")
-print(f"El vehículo que pagó más es: {vehiculo_mayor_pago} con un pago de {max_pago} pesos.")
+    # Accumulate the total collected with the current vehicle's payment.
+    total_collected += payment
+    # Check if this vehicle paid more than the maximum recorded so far.
+    if payment > max_payment:
+        max_payment = payment
+        vehicle_highest_payment = plate
+# After finishing the vehicle registration, show the results.
+print(f"Total collected: {total_collected} pesos.")
+print(f"Number of cars entered: {cars_counter}")
+print(f"Number of motorcycles entered: {motorcycles_counter}")
+print(f"The vehicle that paid the most is: {vehicle_highest_payment} with a payment of {max_payment} pesos.")

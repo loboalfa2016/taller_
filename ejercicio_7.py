@@ -1,26 +1,26 @@
-"""Peluquería: turno del día
-Pide la hora de llegada de un cliente en formato entero de 0 a 23.
-Mostrar:
- mañana si está entre 6 y 11
- tarde si está entre 12 y 17
- noche si está entre 18 y 22
- fuera de horario en cualquier otro caso
-Practica: rangos con condicionales."""
+"""Hair Salon: Day Shift
+Ask for the client's arrival time in integer format from 0 to 23.
+Show:
+ morning if between 6 and 11
+ afternoon if between 12 and 17
+ night if between 18 and 22
+ out of hours in any other case
+Practice: ranges with conditionals."""
 
-# Solicitar la hora de llegada al usuario
-hora = int(input('Ingrese la hora de llegada del cliente (0-23): '))
-# Determinar el turno del día según la hora ingresada
-if 6 <= hora <= 11:
-    turno = "mañana"
-elif 12 <= hora <= 17:
-    turno = "tarde"
-elif 18 <= hora <= 22:
-    turno = "noche"
+# Ask for the arrival time from the user
+hour = int(input('Enter the client\'s arrival time (0-23): '))
+# Determine the day shift based on the entered hour
+if 6 <= hour <= 11:
+    shift = "morning"
+elif 12 <= hour <= 17:
+    shift = "afternoon"
+elif 18 <= hour <= 22:
+    shift = "night"
 else:
-    turno = "fuera de horario"
-# Mostrar el turno del día al usuario
-print(f"El turno del día para la hora {hora} es: {turno}.")
-print("Gracias por su visita.")
-print("¡Que tenga un buen día!")
-print("¡Vuelva pronto!")
-print("¡Gracias por elegir nuestra peluquería!")
+    shift = "out of hours"
+# Show the day shift to the user
+print(f"The day shift for hour {hour} is: {shift}.")
+print("Thank you for your visit.")
+print("Have a good day!")
+print("Come back soon!")
+print("Thank you for choosing our hair salon!")

@@ -1,21 +1,21 @@
-''' Parqueadero: cobro por horas
-Pide cuántas horas estuvo un carro en un parqueadero.
-Reglas:
- primera hora = 5000
- cada hora adicional = 3000
-Muestra el total a pagar.
-Practica: condicionales y operaciones.'''
+'''Parking: charge per hours
+Ask how many hours a car was in the parking lot.
+Rules:
+ first hour = 5000
+ each additional hour = 3000
+Show the total to pay.
+Practice: conditionals and operations.'''
 
-# Solicitar horas al usuario
-horas = int(input('Ingrese el número de horas que estuvo el carro en el parqueadero: '))
-# Calcular el total a pagar según las horas ingresadas
-if horas <= 1:
+# Ask for hours from the user
+hours = int(input('Enter the number of hours the car was in the parking lot: '))
+# Calculate the total to pay according to the entered hours
+if hours <= 1:
     total = 5000
 else:
-    total = 5000 + (horas - 1) * 3000
-# Mostrar el total a pagar
-print(f"El total a pagar por {horas} horas en el parqueadero es: {total} pesos.")
-print("Gracias por su visita.")
-print("¡Que tenga un buen día!")
-print("¡Vuelva pronto!")
-print("¡Gracias por elegir nuestro parqueadero!")
+    total = 5000 + (hours - 1) * 3000
+# Show the total to pay
+print(f"The total to pay for {hours} hours in the parking lot is: {total} pesos.")
+print("Thank you for your visit.")
+print("Have a good day!")
+print("Come back soon!")
+print("Thank you for choosing our parking lot!")

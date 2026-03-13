@@ -1,60 +1,60 @@
-"""Centro de idiomas: evaluación de estudiantes
-Registrar varios estudiantes de un curso de inglés.
-Por cada uno pedir:
- nombre
- nota speaking
- nota listening
- nota reading
-Calcular promedio simple y clasificar:
- menor de 60 → bajo
- 60 a 79 → medio
- 80 o más → alto
-Al final mostrar:
- promedio general del grupo
- mejor estudiante
- cuántos quedaron en cada nivel
-Practica: promedios, máximos, contadores."""
+"""Language center: student evaluation
+Register several students from an English course.
+For each one ask:
+ name
+ speaking grade
+ listening grade
+ reading grade
+Calculate simple average and classify:
+ less than 60 → low
+ 60 to 79 → medium
+ 80 or more → high
+At the end show:
+ group general average
+ best student
+ how many stayed in each level
+Practice: averages, maximums, counters."""
 
-# Inicializamos los contadores y acumuladores necesarios para el registro de estudiantes.
-total_estudiantes = 0
-suma_promedios = 0
-contador_bajo = 0
-contador_medio = 0
-contador_alto = 0
-mejor_estudiante = ""
-mejor_promedio = 0
-# Usamos un bucle para registrar a los estudiantes. El bucle se detendrá cuando el usuario decida no ingresar más estudiantes.
+# Initialize the necessary counters and accumulators for student registration.
+total_students = 0
+sum_averages = 0
+low_counter = 0
+medium_counter = 0
+high_counter = 0
+best_student = ""
+best_average = 0
+# Use a loop to register students. The loop will stop when the user decides not to enter more students.
 while True:
-    # Solicitamos el nombre del estudiante.
-    nombre = input('Ingrese el nombre del estudiante: ')
-    # Solicitamos las notas de speaking, listening y reading.
-    nota_speaking = float(input('Ingrese la nota de speaking: '))
-    nota_listening = float(input('Ingrese la nota de listening: '))
-    nota_reading = float(input('Ingrese la nota de reading: '))
-    # Calculamos el promedio simple de las tres notas.
-    promedio = (nota_speaking + nota_listening + nota_reading) / 3
-    # Acumulamos el total de promedios para calcular el promedio general del grupo más adelante.
-    suma_promedios += promedio
-    total_estudiantes += 1
-    # Clasificamos al estudiante según su promedio y actualizamos los contadores correspondientes.
-    if promedio < 60:
-        contador_bajo += 1
-    elif 60 <= promedio < 80:
-        contador_medio += 1
+    # Ask for the student's name.
+    name = input('Enter the student\'s name: ')
+    # Ask for the speaking, listening and reading grades.
+    speaking_grade = float(input('Enter the speaking grade: '))
+    listening_grade = float(input('Enter the listening grade: '))
+    reading_grade = float(input('Enter the reading grade: '))
+    # Calculate the simple average of the three grades.
+    average = (speaking_grade + listening_grade + reading_grade) / 3
+    # Accumulate the total of averages to calculate the group general average later.
+    sum_averages += average
+    total_students += 1
+    # Classify the student according to their average and update the corresponding counters.
+    if average < 60:
+        low_counter += 1
+    elif 60 <= average < 80:
+        medium_counter += 1
     else:
-        contador_alto += 1
-    # Verificamos si este estudiante tiene el mejor promedio registrado hasta ahora.
-    if promedio > mejor_promedio:
-        mejor_promedio = promedio
-        mejor_estudiante = nombre
-    # Preguntamos al usuario si desea ingresar otro estudiante.
-    continuar = input('¿Desea ingresar otro estudiante? (s/n): ')
-    if continuar.lower() != 's':
+        high_counter += 1
+    # Check if this student has the best average recorded so far.
+    if average > best_average:
+        best_average = average
+        best_student = name
+    # Ask the user if they want to enter another student.
+    continue_input = input('Do you want to enter another student? (y/n): ')
+    if continue_input.lower() != 'y':
         break
-# Al finalizar el registro de los estudiantes, calculamos el promedio general del grupo y mostramos los resultados.
-promedio_general = suma_promedios / total_estudiantes if total_estudiantes > 0 else 0
-print(f"Promedio general del grupo: {promedio_general:.2f}")
-print(f"Mejor estudiante: {mejor_estudiante} con un promedio de {mejor_promedio:.2f}")
-print(f"Cantidad de estudiantes con nivel bajo: {contador_bajo}")
-print(f"Cantidad de estudiantes con nivel medio: {contador_medio}")
-print(f"Cantidad de estudiantes con nivel alto: {contador_alto}")
+# After finishing the student registration, calculate the group general average and show the results.
+general_average = sum_averages / total_students if total_students > 0 else 0
+print(f"Group general average: {general_average:.2f}")
+print(f"Best student: {best_student} with an average of {best_average:.2f}")
+print(f"Number of students with low level: {low_counter}")
+print(f"Number of students with medium level: {medium_counter}")
+print(f"Number of students with high level: {high_counter}")

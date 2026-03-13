@@ -1,30 +1,30 @@
-"""Cafetería: total de una compra sencilla
-En una cafetería venden:
- café = 4000
- té = 3500
- jugo = 5000
-Pide al usuario qué bebida quiere y cuántas unidades desea comprar.
-Luego muestra el total a pagar.
-Practica: condicionales, variables, multiplicación."""
+"""Cafeteria: total of a simple purchase
+In a cafeteria they sell:
+ coffee = 4000
+ tea = 3500
+ juice = 5000
+Ask the user what drink they want and how many units they want to buy.
+Then show the total to pay.
+Practice: conditionals, variables, multiplication."""
 
-# Precios de las bebidas
-precio_cafe = 4000
-precio_te = 3500
-precio_jugo = 5000
+# Drink prices
+coffee_price = 4000
+tea_price = 3500
+juice_price = 5000
 
-# Solicitar bebida y cantidad al usuario
-bebida = str(input("Ingrese la bebida que desea comprar (café, té, jugo): ")).lower()
-cantidad = int(input("Ingrese la cantidad de unidades que desea comprar: "))
-# Calcular el total a pagar según la bebida seleccionada
-if bebida == 'cafe':
-    total = precio_cafe * cantidad
-elif bebida == 'te':
-    total = precio_te * cantidad
-elif bebida == 'jugo':
-    total = precio_jugo * cantidad
+# Ask for drink and quantity from the user
+drink = str(input("Enter the drink you want to buy (coffee, tea, juice): ")).lower()
+quantity = int(input("Enter the number of units you want to buy: "))
+# Calculate the total to pay according to the selected drink
+if drink == 'coffee':
+    total = coffee_price * quantity
+elif drink == 'tea':
+    total = tea_price * quantity
+elif drink == 'juice':
+    total = juice_price * quantity
 else:
     total = 0
-    print("Bebida no válida. Por favor, ingrese una bebida válida.")
-# Mostrar el total a pagar
+    print("Invalid drink. Please enter a valid drink.")
+# Show the total to pay
 if total > 0:
-    print(f"El total a pagar por {cantidad} unidades de {bebida} es: {total} pesos.")   
+    print(f"The total to pay for {quantity} units of {drink} is: {total} pesos.")   

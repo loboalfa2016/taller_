@@ -1,35 +1,35 @@
-"""Tienda de ropa deportiva: inventario crítico
-Registrar 10 productos.
-Por cada producto pedir:
- nombre
- cantidad disponible
-Clasificar:
- 0 → agotado
- 1 a 5 → stock bajo
- 6 o más → stock normal
-Al final mostrar:
- cuántos están agotados
- cuántos tienen stock bajo
- cuántos están normales
-Practica: clasificación por rangos, ciclo."""
-# Inicializamos los contadores para cada categoría de stock.
-contador_agotados = 0
-contador_stock_bajo = 0
-contador_stock_normal = 0
-# Usamos un bucle para registrar 10 productos.
+"""Sports clothing store: critical inventory
+Register 10 products.
+For each product ask:
+ name
+ available quantity
+Classify:
+ 0 → out of stock
+ 1 to 5 → low stock
+ 6 or more → normal stock
+At the end show:
+ how many are out of stock
+ how many have low stock
+ how many are normal
+Practice: classification by ranges, loop."""
+# Initialize the counters for each stock category.
+out_of_stock_counter = 0
+low_stock_counter = 0
+normal_stock_counter = 0
+# Use a loop to register 10 products.
 for i in range(10):
-    # Solicitamos el nombre del producto (aunque no se usará para la clasificación).
-    nombre_producto = input('Ingrese el nombre del producto: ')
-    # Solicitamos la cantidad disponible del producto.
-    cantidad_disponible = int(input('Ingrese la cantidad disponible: '))
-    # Clasificamos el stock según la cantidad disponible.
-    if cantidad_disponible == 0:
-        contador_agotados += 1
-    elif 1 <= cantidad_disponible <= 5:
-        contador_stock_bajo += 1
+    # Ask for the product name (although it won't be used for classification).
+    product_name = input('Enter the product name: ')
+    # Ask for the available quantity of the product.
+    available_quantity = int(input('Enter the available quantity: '))
+    # Classify the stock according to the available quantity.
+    if available_quantity == 0:
+        out_of_stock_counter += 1
+    elif 1 <= available_quantity <= 5:
+        low_stock_counter += 1
     else:
-        contador_stock_normal += 1
-# Al finalizar el registro de los productos, mostramos cuántos están agotados, tienen stock bajo y están normales.
-print(f"Productos agotados: {contador_agotados}")
-print(f"Productos con stock bajo: {contador_stock_bajo}")
-print(f"Productos con stock normal: {contador_stock_normal}")   
+        normal_stock_counter += 1
+# After registering the products, show how many are out of stock, have low stock and are normal.
+print(f"Out of stock products: {out_of_stock_counter}")
+print(f"Products with low stock: {low_stock_counter}")
+print(f"Products with normal stock: {normal_stock_counter}")   

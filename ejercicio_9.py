@@ -1,25 +1,25 @@
-"""Spa: servicio disponible
-En un spa hay estos servicios:
- masaje
+"""Spa: available service
+In a spa there are these services:
+ massage
  facial
  manicure
-Pide al usuario qué servicio desea y muestra un mensaje confirmando
-si existe o no.
-Practica: condicionales con texto."""
-# Solicitar servicio al usuario
-servicio = input('  Ingrese el servicio que desea (masaje, facial, manicure): ').lower()
-# Verificar si el servicio existe y mostrar mensaje de confirmación
-if servicio == "masaje":
-    print("Servicio de masaje disponible. ¡Disfrute su experiencia!")
-elif servicio == "facial":
-    print("Servicio de facial disponible. ¡Disfrute su experiencia!")
-elif servicio == "manicure":
-    print("Servicio de manicure disponible. ¡Disfrute su experiencia!")
+Ask the user what service they want and show a message confirming
+if it exists or not.
+Practice: conditionals with text."""
+# Ask for service from the user
+service = input('Enter the service you want (massage, facial, manicure): ').lower()
+# Check if the service exists and show confirmation message
+if service == "massage":
+    print("Massage service available. Enjoy your experience!")
+elif service == "facial":
+    print("Facial service available. Enjoy your experience!")
+elif service == "manicure":
+    print("Manicure service available. Enjoy your experience!")
 else:
-    print("Servicio no disponible. Por favor, elija un servicio válido.")
-print("Gracias por su visita.")
-print("¡Que tenga un buen día!")
-print("¡Vuelva pronto!")
-print("¡Gracias por elegir nuestro spa!")
-print("¡Esperamos verlo de nuevo pronto!")
-print("¡Disfrute de su día en nuestro spa!")
+    print("Service not available. Please choose a valid service.")
+print("Thank you for your visit.")
+print("Have a good day!")
+print("Come back soon!")
+print("Thank you for choosing our spa!")
+print("We hope to see you again soon!")
+print("Enjoy your day at our spa!")

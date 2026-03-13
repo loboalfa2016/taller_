@@ -1,21 +1,21 @@
-"""entrada según edad
-El precio de la entrada cambia así:
- niños menores de 12 → 8000
- adultos de 12 a 59 → 12000
- mayores de 60 → 9000
-Pide la edad del cliente y muestra cuánto debe pagar.
-Practica: condicionales."""
+"""Entry according to age
+The entry price changes like this:
+ children under 12 → 8000
+ adults from 12 to 59 → 12000
+ seniors over 60 → 9000
+Ask for the client's age and show how much they must pay.
+Practice: conditionals."""
 
-# Solicitar edad al usuario
-age = int(input("Ingrese la edad del cliente: "))
-# Determinar el precio de la entrada según la edad
+# Ask for age from the user
+age = int(input("Enter the client's age: "))
+# Determine the entry price according to age
 if age < 12:
-    precio = 8000
+    price = 8000
 elif 12 <= age <= 59:
-    precio = 12000
+    price = 12000
 else:
-    precio = 9000
-# Mostrar el precio a pagar
-print(f"El cliente debe pagar: {precio} pesos.")
-print("Gracias por su compra.")
-print("¡Disfrute su visita!")
+    price = 9000
+# Show the price to pay
+print(f"The client must pay: {price} pesos.")
+print("Thank you for your purchase.")
+print("Enjoy your visit!")

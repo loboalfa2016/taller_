@@ -1,29 +1,29 @@
-"""Una heladería quiere registrar 5 pedidos.
-Por cada cliente, el programa debe pedir el sabor elegido:
- vainilla
+"""An ice cream shop wants to register 5 orders.
+For each customer, the program must ask for the chosen flavor:
+ vanilla
  chocolate
- fresa
-Al final debe mostrar cuántas veces se pidió cada sabor.
-Practica: ciclos, condicionales, contadores."""
+ strawberry
+At the end it must show how many times each flavor was ordered.
+Practice: loops, conditionals, counters."""
 
-# Inicializar contadores
-contador_vainilla = 0
-contador_chocolate = 0
-contador_fresa = 0
+# Initialize counters
+vanilla_counter = 0
+chocolate_counter = 0
+strawberry_counter = 0
 
-# Registrar pedidos
+# Register orders
 for i in range(5):
-    sabor = input("ingrese el sabor elegido (vainilla, chocolate, fresa): ").lower()
-    if sabor == "valnilla":
-        contador_vainilla += 1
-    elif sabor == "chocolate":
-        contador_chocolate += 1
-    elif sabor == "fresa":
-        contador_fresa += 1
+    flavor = input("enter the chosen flavor (vanilla, chocolate, strawberry): ").lower()
+    if flavor == "vanilla":
+        vanilla_counter += 1
+    elif flavor == "chocolate":
+        chocolate_counter += 1
+    elif flavor == "strawberry":
+        strawberry_counter += 1
     else:
-        print("Sabor no válido. Por favor, ingrese un sabor válido.")
+        print("Invalid flavor. Please enter a valid flavor.")
 
-# Mostrar resultados
-print(f"Cantidad de pedidos de vainilla: {contador_vainilla}")
-print(f"Cantidad de pedidos de chocolate: {contador_chocolate}")
-print(f"Cantidad de pedidos de fresa: {contador_fresa}")
+# Show results
+print(f"Number of vanilla orders: {vanilla_counter}")
+print(f"Number of chocolate orders: {chocolate_counter}")
+print(f"Number of strawberry orders: {strawberry_counter}")

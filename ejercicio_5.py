@@ -1,19 +1,19 @@
-"""Tienda de mascotas: alimento por tipo de animal
-Pide el tipo de mascota:
- perro
- gato
- conejo
-Luego muestra una recomendación de alimento según el animal.
-Practica: comparaciones con texto."""
+"""Pet store: food by animal type
+Ask for the type of pet:
+ dog
+ cat
+ rabbit
+Then show a food recommendation according to the animal.
+Practice: text comparisons."""
 
-# Solicitar tipo de mascota al usuario
-mascota = input("Ingrese el tipo de mascota (perro, gato, conejo): ").lower()
-# Mostrar recomendación de alimento según el tipo de mascota
-if mascota == "perro":
-    print("Recomendación: Alimento para perros.")
-elif mascota == "gato":
-    print("Recomendación: Alimento para gatos.")
-elif mascota == "conejo":
-    print("Recomendación: Alimento para conejos.")
+# Ask for pet type from the user
+pet = input("Enter the type of pet (dog, cat, rabbit): ").lower()
+# Show food recommendation according to pet type
+if pet == "dog":
+    print("Recommendation: Food for dogs.")
+elif pet == "cat":
+    print("Recommendation: Food for cats.")
+elif pet == "rabbit":
+    print("Recommendation: Food for rabbits.")
 else:
-    print("Tipo de mascota no válido. Por favor, ingrese un tipo de mascota válido.")
+    print("Invalid pet type. Please enter a valid pet type.")

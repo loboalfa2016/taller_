@@ -1,51 +1,50 @@
-""" Peluquería: agenda de atención
-Una peluquería atiende 7 clientes al día.
-Por cada cliente pedir:
- nombre
- servicio solicitado: corte, cepillado, tintura
- valor pagado
-Al final mostrar:
- total del día
- cantidad de clientes por servicio
- servicio más solicitado
-Practica: contadores, acumuladores, comparaciones."""
-# Inicializamos los contadores y acumuladores necesarios para el registro de clientes.
-total_dia = 0
-contador_corte = 0
-contador_cepillado = 0
-contador_tintura = 0
-# Usamos un bucle para registrar a 7 clientes.
+"""Hair Salon: attention schedule
+A hair salon serves 7 clients per day.
+For each client ask:
+ name
+ requested service: cut, brushing, dyeing
+ value paid
+At the end show:
+ total of the day
+ number of clients per service
+ most requested service
+Practice: counters, accumulators, comparisons."""
+# Initialize the necessary counters and accumulators for client registration.
+total_day = 0
+cut_counter = 0
+brushing_counter = 0
+dyeing_counter = 0
+# Use a loop to register 7 clients.
 for i in range(7):
-    # Solicitamos el nombre del cliente (aunque no se usará para la clasificación).
-    nombre = input('Ingrese el nombre del cliente: ')
-    # Solicitamos el servicio solicitado y el valor pagado.
-    servicio = input('Ingrese el servicio solicitado (corte, cepillado, tintura): ')
-    valor_pagado = float(input('Ingrese el valor pagado: '))
-    # Acumulamos el total del día con el valor pagado por el cliente actual.
-    total_dia += valor_pagado
-    # Contamos la cantidad de clientes por cada servicio según la entrada del usuario.
-    if servicio.lower() == 'corte':
-        contador_corte += 1
-    elif servicio.lower() == 'cepillado':
-        contador_cepillado += 1
-    elif servicio.lower() == 'tintura':
-        contador_tintura += 1
+    # Ask for the client's name (although it won't be used for classification).
+    name = input('Enter the client\'s name: ')
+    # Ask for the requested service and the value paid.
+    service = input('Enter the requested service (cut, brushing, dyeing): ')
+    value_paid = float(input('Enter the value paid: '))
+    # Accumulate the total of the day with the value paid by the current client.
+    total_day += value_paid
+    # Count the number of clients per service according to the user input.
+    if service.lower() == 'cut':
+        cut_counter += 1
+    elif service.lower() == 'brushing':
+        brushing_counter += 1
+    elif service.lower() == 'dyeing':
+        dyeing_counter += 1
     else:
-        print('Servicio no válido. Intente nuevamente.')
-# Al finalizar el registro de los clientes, mostramos el total del día y la cantidad de clientes
-# por servicio.
-print(f"Total del día: {total_dia} pesos.")
-print(f"Cantidad de clientes por corte: {contador_corte}")
-print(f"Cantidad de clientes por cepillado: {contador_cepillado}")
-print(f"Cantidad de clientes por tintura: {contador_tintura}")
-# Determinamos cuál servicio fue el más solicitado.
-if contador_corte > contador_cepillado and contador_corte > contador_tintura:
-    servicio_mas_solicitado = 'corte'
-elif contador_cepillado > contador_corte and contador_cepillado > contador_tintura:
-    servicio_mas_solicitado = 'cepillado'
-elif contador_tintura > contador_corte and contador_tintura > contador_cepillado:
-    servicio_mas_solicitado = 'tintura'
+        print('Invalid service. Try again.')
+# After registering the clients, show the total of the day and the number of clients per service.
+print(f"Total of the day: {total_day} pesos.")
+print(f"Number of clients for cut: {cut_counter}")
+print(f"Number of clients for brushing: {brushing_counter}")
+print(f"Number of clients for dyeing: {dyeing_counter}")
+# Determine which service was the most requested.
+if cut_counter > brushing_counter and cut_counter > dyeing_counter:
+    most_requested_service = 'cut'
+elif brushing_counter > cut_counter and brushing_counter > dyeing_counter:
+    most_requested_service = 'brushing'
+elif dyeing_counter > cut_counter and dyeing_counter > brushing_counter:
+    most_requested_service = 'dyeing'
 else:
-    servicio_mas_solicitado = 'empate entre servicios'
-# Mostramos cuál servicio fue el más solicitado.
-print(f"El servicio más solicitado es: {servicio_mas_solicitado}.") 
+    most_requested_service = 'tie between services'
+# Show which service was the most requested.
+print(f"The most requested service is: {most_requested_service}.") 

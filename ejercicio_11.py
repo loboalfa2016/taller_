@@ -1,77 +1,77 @@
-"""Heladería: factura de varios clientes
-Una heladería quiere registrar varios clientes hasta que el usuario
-decida salir.
-Productos:
- cono = 3000
- vaso = 4000
+"""Ice cream shop: invoice for several customers
+An ice cream shop wants to register several customers until the user
+decides to exit.
+Products:
+ cone = 3000
+ cup = 4000
  banana split = 9000
-Por cada cliente:
- pedir producto
- pedir cantidad
- calcular total
-Al final mostrar:
- total vendido
- cuántos clientes se atendieron
- cuál producto se pidió más veces
-Practica: ciclos, acumuladores, contadores."""
+For each customer:
+ ask for product
+ ask for quantity
+ calculate total
+At the end show:
+ total sold
+ how many customers were served
+ which product was ordered most times
+Practice: loops, accumulators, counters."""
 
-# Se inicializan contadores y acumuladores antes de empezar a procesar datos.
-# `total_vendido` guardará la suma de todas las ventas en pesos.
-# `contador_clientes` llevará la cuenta de cuántos clientes se atendieron.
-# Los siguientes tres contadores guardarán cuántas unidades de cada producto se vendieron.
-total_vendido = 0
-contador_clientes = 0
-contador_cono = 0
-contador_vaso = 0
-contador_banana_split = 0
+# Initialize counters and accumulators before starting to process data.
+# `total_sold` will store the sum of all sales in pesos.
+# `customer_counter` will keep count of how many customers were served.
+# The following three counters will store how many units of each product were sold.
+total_sold = 0
+customer_counter = 0
+cone_counter = 0
+cup_counter = 0
+banana_split_counter = 0
 
-# Entramos en un bucle infinito que solo se romperá cuando el usuario escriba "salir".
-# Este ciclo representa la atención de clientes uno por uno.
+# Enter an infinite loop that will only break when the user writes "exit".
+# This cycle represents serving customers one by one.
 while True:
-    # Pedimos al usuario el tipo de producto que desea comprar.
-    producto = input('ingrese el producto (cono, vaso, banana split) o "salir" para terminar: ')
-    # Si el usuario quiere terminar, salimos del bucle.
-    if producto.lower() == 'salir':
+    # Ask the user for the type of product they want to buy.
+    product = input('enter the product (cone, cup, banana split) or "exit" to finish: ')
+    # If the user wants to finish, exit the loop.
+    if product.lower() == 'exit':
         break
-    # Para cualquier otro valor, pedimos la cantidad de unidades.
-    cantidad = int(input('ingrese la cantidad: '))
-    # Según el producto elegido, calculamos el precio y actualizamos los contadores.
-    if producto.lower() == 'cono':
-        # Cada cono cuesta 3000 pesos.
-        total_vendido += 3000 * cantidad
-        contador_cono += cantidad
-    elif producto.lower() == 'vaso':
-        # Cada vaso cuesta 4000 pesos.
-        total_vendido += 4000 * cantidad
-        contador_vaso += cantidad
-    elif producto.lower() == 'banana split':
-        # Cada banana split cuesta 9000 pesos.
-        total_vendido += 9000 * cantidad
-        contador_banana_split += cantidad
+    # For any other value, ask for the quantity of units.
+    quantity = int(input('enter the quantity: '))
+    # According to the chosen product, calculate the price and update the counters.
+    if product.lower() == 'cone':
+        # Each cone costs 3000 pesos.
+        total_sold += 3000 * quantity
+        cone_counter += quantity
+    elif product.lower() == 'cup':
+        # Each cup costs 4000 pesos.
+        total_sold += 4000 * quantity
+        cup_counter += quantity
+    elif product.lower() == 'banana split':
+        # Each banana split costs 9000 pesos.
+        total_sold += 9000 * quantity
+        banana_split_counter += quantity
     else:
-        # Si el producto no es reconocido, avisamos y volvemos a preguntar.
-        print('Producto no válido. Intente nuevamente.')
+        # If the product is not recognized, notify and ask again.
+        print('Invalid product. Try again.')
         continue
-    # Contamos un cliente más atendido (solo si el producto fue válido).
-    contador_clientes += 1
+    # Count one more customer served (only if the product was valid).
+    customer_counter += 1
 
-# Una vez terminado el registro de clientes, decidimos qué producto se pidió más veces.
-if contador_cono > contador_vaso and contador_cono > contador_banana_split:
-    producto_mas_pedido = 'cono'
-elif contador_vaso > contador_cono and contador_vaso > contador_banana_split:
-    producto_mas_pedido = 'vaso'
-elif contador_banana_split > contador_cono and contador_banana_split > contador_vaso:
-    producto_mas_pedido = 'banana split'
+# Once the customer registration is finished, decide which product was ordered most times.
+if cone_counter > cup_counter and cone_counter > banana_split_counter:
+    most_ordered_product = 'cone'
+elif cup_counter > cone_counter and cup_counter > banana_split_counter:
+    most_ordered_product = 'cup'
+elif banana_split_counter > cone_counter and banana_split_counter > cup_counter:
+    most_ordered_product = 'banana split'
 else:
-    # Si hay empate entre dos o más productos, indicamos que no hay un claro ganador.
-    producto_mas_pedido = 'ninguno, hay un empate'
+    # If there is a tie between two or more products, indicate that there is no clear winner.
+    most_ordered_product = 'none, there is a tie'
 
-# Finalmente mostramos el resumen de la jornada al usuario.
-print(f"Total vendido: {total_vendido} pesos.")
-print(f"Cantidad de clientes atendidos: {contador_clientes}.")
-print(f"Producto más pedido: {producto_mas_pedido}.")
-print("Gracias por su participación.")
-print("¡Que tenga un buen día!")
-print("¡Vuelva pronto!")
-print("¡Gracias por elegir nuestra heladería!")
-print("¡Esperamos verlo de nuevo pronto!")
+# Finally show the summary of the day to the user.
+print(f"Total sold: {total_sold} pesos.")
+print(f"Number of customers served: {customer_counter}.")
+print(f"Most ordered product: {most_ordered_product}.")
+print("Thank you for your participation.")
+print("Have a good day!")
+print("Come back soon!")
+print("Thank you for choosing our ice cream shop!")
+print("We hope to see you again soon!")

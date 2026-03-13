@@ -1,20 +1,20 @@
-"""Tienda deportiva: contar productos caros
-Pide el precio de 6 productos deportivos.
-Al final indica cuántos cuestan más de 100000.
-Practica: ciclo, contador, condicional."""
+"""Sports store: count expensive products
+Ask for the price of 6 sports products.
+At the end indicate how many cost more than 100000.
+Practice: loop, counter, conditional."""
 
-# Inicializar contador para productos caros
-contador_caros = 0
-# Solicitar precios de 6 productos al usuario
+# Initialize counter for expensive products
+expensive_counter = 0
+# Ask for prices of 6 products from the user
 for i in range(6):
-    precio = float(input(f'Ingrese el precio del producto {i + 1}: '))
-    # Verificar si el producto cuesta más de 100000
-    if precio > 100000:
-        contador_caros += 1
-# Mostrar el número de productos caros al usuario
-print(f"El número de productos que cuestan más de 100000 es: {contador_caros}.")
-print("Gracias por su visita.")
-print("¡Que tenga un buen día!")
-print("¡Vuelva pronto!")
-print("¡Gracias por elegir nuestra tienda deportiva!")
-print("¡Esperamos verlo de nuevo pronto!")
+    price = float(input(f'Enter the price of product {i + 1}: '))
+    # Check if the product costs more than 100000
+    if price > 100000:
+        expensive_counter += 1
+# Show the number of expensive products to the user
+print(f"The number of products that cost more than 100000 is: {expensive_counter}.")
+print("Thank you for your visit.")
+print("Have a good day!")
+print("Come back soon!")
+print("Thank you for choosing our sports store!")
+print("We hope to see you again soon!")

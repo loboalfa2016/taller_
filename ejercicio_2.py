@@ -1,20 +1,20 @@
-""" Gimnasio: acceso por edad
-Un gimnasio ofrece clases según la edad:
- menor de 13 → no puede ingresar
- de 13 a 17 → clase juvenil
- de 18 a 59 → clase general
- 60 o más → clase senior
-Pide la edad de una persona y muestra a qué grupo pertenece.
-Practica: if, elif, else."""
+"""Gym: access by age
+A gym offers classes according to age:
+ under 13 → cannot enter
+ 13 to 17 → youth class
+ 18 to 59 → general class
+ 60 or more → senior class
+Ask for a person's age and show which group they belong to.
+Practice: if, elif, else."""
 
-# Solicitar edad al usuario
-age = int(input("Ingrese la edad de la persona: "))
-# Determinar el grupo de clase según la edad
+# Ask for age from the user
+age = int(input("Enter the person's age: "))
+# Determine the class group according to age
 if age < 13:
-    print("No puede ingresar al gimnasio.")
+    print("Cannot enter the gym.")
 elif 13 <= age <= 17:
-    print("Pertenece a la clase juvenil.")
+    print("Belongs to the youth class.")
 elif 18 <= age <= 59:
-    print("Pertenece a la clase general.")
+    print("Belongs to the general class.")
 else:
-    print("Pertenece a la clase senior.")
+    print("Belongs to the senior class.")

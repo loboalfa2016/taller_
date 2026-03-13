@@ -1,63 +1,63 @@
-"""Club recreativo: control de membresías
-Registrar varias personas en un club.
-Por cada una pedir:
- nombre
- edad
- tipo de plan: básico, premium, familiar
-Reglas:
- básico = 50000
+"""Recreational club: membership control
+Register several people in a club.
+For each one ask:
+ name
+ age
+ plan type: basic, premium, family
+Rules:
+ basic = 50000
  premium = 90000
- familiar = 130000
-Además:
- si la persona es menor de 18, mostrar “registro juvenil”
- si tiene 60 o más, mostrar “beneficio senior”
-Al final mostrar:
- total recaudado
- cantidad de personas por plan
- plan más vendido
-Practica: condicionales, contadores, acumuladores."""
-# Inicializamos los contadores y acumuladores necesarios para el registro de membresías.
-total_recaudado = 0
-contador_basico = 0
-contador_premium = 0
-contador_familiar = 0
-# Usamos un bucle para registrar a varias personas. En este caso, se registrarán 10 personas, pero se puede ajustar según sea necesario.
+ family = 130000
+Additionally:
+ if the person is under 18, show "youth registration"
+ if they are 60 or more, show "senior benefit"
+At the end show:
+ total collected
+ number of people per plan
+ most sold plan
+Practice: conditionals, counters, accumulators."""
+# Initialize the necessary counters and accumulators for membership registration.
+total_collected = 0
+basic_counter = 0
+premium_counter = 0
+family_counter = 0
+# Use a loop to register several people. In this case, 10 people will be registered, but it can be adjusted as necessary.
 for i in range(10): 
-    # Solicitamos el nombre, edad y tipo de plan de la persona.
-    nombre = input('Ingrese el nombre de la persona: ')
-    edad = int(input('Ingrese la edad de la persona: '))
-    tipo_plan = input('Ingrese el tipo de plan (básico, premium, familiar): ')
-    # Verificamos el tipo de plan y actualizamos los contadores y acumuladores según corresponda.
-    if tipo_plan.lower() == 'básico':
-        total_recaudado += 50000
-        contador_basico += 1
-    elif tipo_plan.lower() == 'premium':
-        total_recaudado += 90000
-        contador_premium += 1
-    elif tipo_plan.lower() == 'familiar':
-        total_recaudado += 130000
-        contador_familiar += 1
+    # Ask for the person's name, age and plan type.
+    name = input('Enter the person\'s name: ')
+    age = int(input('Enter the person\'s age: '))
+    plan_type = input('Enter the plan type (basic, premium, family): ')
+    # Check the plan type and update the counters and accumulators accordingly.
+    if plan_type.lower() == 'basic':
+        total_collected += 50000
+        basic_counter += 1
+    elif plan_type.lower() == 'premium':
+        total_collected += 90000
+        premium_counter += 1
+    elif plan_type.lower() == 'family':
+        total_collected += 130000
+        family_counter += 1
     else:
-        print('Tipo de plan no válido. Intente nuevamente.')
+        print('Invalid plan type. Try again.')
         continue
-    # Verificamos si la persona es menor de 18 años o tiene 60 o más años para mostrar los mensajes correspondientes.
-    if edad < 18:
-        print('Registro juvenil')
-    elif edad >= 60:
-        print('Beneficio senior')
-# Al finalizar el registro de las personas, mostramos los resultados.
-print(f"Total recaudado: {total_recaudado} pesos.")
-print(f"Cantidad de personas con plan básico: {contador_basico}")
-print(f"Cantidad de personas con plan premium: {contador_premium}")
-print(f"Cantidad de personas con plan familiar: {contador_familiar}")
-# Determinamos cuál plan fue el más vendido.
-if contador_basico > contador_premium and contador_basico > contador_familiar:
-    plan_mas_vendido = 'básico'
-elif contador_premium > contador_basico and contador_premium > contador_familiar:
-    plan_mas_vendido = 'premium'
-elif contador_familiar > contador_basico and contador_familiar > contador_premium:
-    plan_mas_vendido = 'familiar'
+    # Check if the person is under 18 years old or 60 or more years old to show the corresponding messages.
+    if age < 18:
+        print('Youth registration')
+    elif age >= 60:
+        print('Senior benefit')
+# After registering the people, show the results.
+print(f"Total collected: {total_collected} pesos.")
+print(f"Number of people with basic plan: {basic_counter}")
+print(f"Number of people with premium plan: {premium_counter}")
+print(f"Number of people with family plan: {family_counter}")
+# Determine which plan was the most sold.
+if basic_counter > premium_counter and basic_counter > family_counter:
+    most_sold_plan = 'basic'
+elif premium_counter > basic_counter and premium_counter > family_counter:
+    most_sold_plan = 'premium'
+elif family_counter > basic_counter and family_counter > premium_counter:
+    most_sold_plan = 'family'
 else:
-    plan_mas_vendido = 'empate entre planes'
-# Mostramos cuál plan fue el más vendido.
-print(f"El plan más vendido es: {plan_mas_vendido}.")
+    most_sold_plan = 'tie between plans'
+# Show which plan was the most sold.
+print(f"The most sold plan is: {most_sold_plan}.")
